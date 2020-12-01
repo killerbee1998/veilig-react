@@ -5,13 +5,13 @@ import './Register.css'
 const Register = () =>{
     return(
         
-        <section className="coloured-section" id="login">
+        <section className="coloured-section" id="register">
             <div className = "container-header">
                 <h1 id="header"> Veilig </h1>
             </div>
             <div className="container-form">
 
-                <h1>Login</h1>
+                <h1>Register</h1>
 
                 <form>
                     <div className = 'form-group'>
@@ -23,7 +23,7 @@ const Register = () =>{
                         <input type="password" class="form-control" id="exampleInputPassword1"></input>
                     </div>
 
-                    <div type="submit" class="btn btn-primary btn-lg" id="btn-submit-login">Submit</div>
+                    <div type="submit" class="btn btn-primary btn-lg" id="btn-submit-register">Submit</div>
 
                 </form>
 
