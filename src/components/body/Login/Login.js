@@ -7,10 +7,10 @@ const Login = () =>{
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPass, setLoginPass] = useState('')
     
-    onEmailChange = (event) =>{
+    const onEmailChange = (event) =>{
         setLoginEmail(event.target.value)
     }
-    onPassChange = (event) =>{
+    const onPassChange = (event) =>{
         setLoginPass(event.target.value)
     }
 
