@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import './Login.css'
 
+
 const Login = () =>{
+    const [loginEmail, setLoginEmail] = useState('')
+    const [loginPass, setLoginPass] = useState('')
+    
     return(
         
         <section className="coloured-section" id="login">
