@@ -30,3 +30,5 @@ const Login = () =>{
         </section>
     )
 }
+
+export default Login
