@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 import './Login.css'
 
-import {loginUrl} from '../data/data'
+import {loginUrl} from '../../../data/data'
 
 const Login = () =>{
     const [loginEmail, setLoginEmail] = useState('')
