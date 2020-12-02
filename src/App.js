@@ -8,7 +8,7 @@ import Register from './components/body/Register/Register'
 function App() {
   return (
     <div className="App">
-      <Login></Login>
+      <Register></Register>
     </div>
   );
 }

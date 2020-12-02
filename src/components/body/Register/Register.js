@@ -46,7 +46,7 @@ const Register = () =>{
                 <h1>Register</h1>
 
                 <form>
-                    <div className = 'form-group'>Register
+                    <div className = 'form-group'>
                         <label for="exampleInputEmail1">Email</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={onEmailChange}></input>
                     </div>
