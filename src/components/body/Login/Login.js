@@ -14,6 +14,23 @@ const Login = () =>{
         setLoginPass(event.target.value)
     }
 
+    const onLoginSubmit = async(url, data) => {
+        const response = await fetch(url, {
+          method: 'POST',
+          mode: 'cors', 
+          cache: 'no-cache', 
+          credentials: 'same-origin', 
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          redirect: 'follow',
+          referrerPolicy: 'no-referrer',
+          body: JSON.stringify(data) 
+        });
+        return response.json(); 
+        
+      } 
+
     return(
         
         <section className="coloured-section" id="login">
@@ -26,15 +43,15 @@ const Login = () =>{
 
                 <form>
                     <div className = 'form-group'>
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={onEmailChange()}></input>
+                        <label htmlFor="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={onEmailChange}></input>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" onChange={onPassChange()}></input>
+                        <input type="password" class="form-control" id="exampleInputPassword1" onChange={onPassChange}></input>
                     </div>
 
-                    <div type="submit" class="btn btn-primary btn-lg" id="btn-submit-login">Submit</div>
+                    <div type="submit" class="btn btn-primary btn-lg" id="btn-submit-login" onClick={onLoginSubmit}>Submit</div>
 
                 </form>
 
