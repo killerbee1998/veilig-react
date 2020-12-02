@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 
 import './Register.css'
 
+import {registerUrl} from '../../../data/data'
+
 const Register = () =>{
 
     const [registerEmail, setRegisterEmail] = useState('')
@@ -14,6 +16,25 @@ const Register = () =>{
         setRegisterPass(event.target.value)
     }
 
+    const onRegisterSubmit = async(event) => {
+        const data = {email: registerEmail, pass: registerPass}
+        const response = await fetch(registerUrl, {
+          method: 'POST',
+          mode: 'cors', 
+          cache: 'no-cache', 
+          credentials: 'same-origin', 
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          redirect: 'follow',
+          referrerPolicy: 'no-referrer',
+          body: JSON.stringify(data) 
+        });
+        const responseData = await response.json()
+        console.log(responseData)
+        return responseData; 
+      }
+
     return(
         
         <section className="coloured-section" id="register">
@@ -22,10 +43,10 @@ const Register = () =>{
             </div>
             <div className="container-form">
 
-<h1>Register</h1>
+                <h1>Register</h1>
 
-<form>
-    <div className = 'form-group'>Login
+                <form>
+                    <div className = 'form-group'>Register
                         <label for="exampleInputEmail1">Email</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={onEmailChange}></input>
                     </div>
@@ -34,7 +55,7 @@ const Register = () =>{
                         <input type="password" class="form-control" id="exampleInputPassword1" onChange={onPassChange}></input>
                     </div>
 
-                    <div type="submit" class="btn btn-primary btn-lg" id="btn-submit-register">Submit</div>
+                    <div type="submit" class="btn btn-primary btn-lg" id="btn-submit-register" onClick={onRegisterSubmit}>Submit</div>
 
                 </form>
 
