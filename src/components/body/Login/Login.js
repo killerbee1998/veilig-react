@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 
 import './Login.css'
 
+import {loginUrl} from '../data/data'
 
 const Login = () =>{
     const [loginEmail, setLoginEmail] = useState('')
@@ -14,8 +15,9 @@ const Login = () =>{
         setLoginPass(event.target.value)
     }
 
-    const onLoginSubmit = async(url, data) => {
-        const response = await fetch(url, {
+    const onLoginSubmit = async(event) => {
+        const data = {email: loginEmail, pass: loginPass}
+        const response = await fetch(loginUrl, {
           method: 'POST',
           mode: 'cors', 
           cache: 'no-cache', 
@@ -27,9 +29,10 @@ const Login = () =>{
           referrerPolicy: 'no-referrer',
           body: JSON.stringify(data) 
         });
-        return response.json(); 
-        
-      } 
+        const responseData = await response.json()
+        console.log(responseData)
+        return responseData; 
+      }
 
     return(
         
