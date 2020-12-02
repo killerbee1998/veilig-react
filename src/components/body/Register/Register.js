@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import './Register.css'
 
 const Register = () =>{
+
+    const [registerEmail, setRegisterEmail] = useState('')
+    const [registerPass, setRegisterPass] = useState('')
+
     return(
         
         <section className="coloured-section" id="register">
