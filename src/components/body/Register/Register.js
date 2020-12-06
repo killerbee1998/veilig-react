@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 import './Register.css'
 
-import {registerUrl} from '../../../data/data'
+import {registerUrl} from '../../../urlData/urlData'
 
 const Register = () =>{
 
