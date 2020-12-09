@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import './App.css';
 
@@ -7,10 +7,16 @@ import Register from './components/body/Register/Register'
 import Navbar from './components/Navbar/Navbar'
 
 function App() {
+
+  const [loginStatus, setLoginStatus] = useState('');
+  const [body,setBody] = useState(<Register/>);
+
   return (
     <div className="App">
       <Navbar/>
-      <Register/>
+      <div>
+        {body}
+      </div>
     </div>
   );
 }
