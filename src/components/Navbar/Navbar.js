@@ -31,7 +31,7 @@ const Navbar = ({loginStatus, setLoginStatus}) =>{
                 break
 
         }
-    }, )
+    },[loginStatus])
 
     return(
         <nav>
