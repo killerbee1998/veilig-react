@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar loginStatus = {loginStatus}/>
+      <Navbar loginStatus = {loginStatus} setLoginStatus = {setLoginStatus}/>
       <div>
         {body}
       </div>
