@@ -29,9 +29,9 @@ function App() {
           setBody(<Register/>)
           break
       case 'onLogin':
-          setBody(<Login refreshToken={refreshToken}/>)           
+          setBody(<Login setLoginStatus = {setLoginStatus} setrefreshToken={refreshToken}/>)           
       default:
-          setBody(<Login refreshToken={refreshToken}/>)
+          setBody(<Login setLoginStatus = {setLoginStatus} refreshToken={refreshToken}/>)
           break
     }
   }, [loginStatus])

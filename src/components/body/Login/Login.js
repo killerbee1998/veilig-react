@@ -4,7 +4,7 @@ import './Login.css'
 
 import {loginUrl} from '../../../urlData/urlData'
 
-const Login = ({refreshToken}) =>{
+const Login = ({setLoginStatus,refreshToken}) =>{
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPass, setLoginPass] = useState('')
     
@@ -35,6 +35,7 @@ const Login = ({refreshToken}) =>{
             localStorage.setItem('token', responseData.token)
             localStorage.setItem('key', responseData.key)
             refreshToken();
+            setLoginStatus('LoggedIn')
         }
 
         return responseData; 
