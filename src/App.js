@@ -23,9 +23,9 @@ function App() {
       default:
           setBody(<Login/>)
           break
-
     }
   }, [loginStatus])
+  
   return (
     <div className="App">
       <Navbar loginStatus = {loginStatus} setLoginStatus = {setLoginStatus}/>
