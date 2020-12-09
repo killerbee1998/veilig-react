@@ -8,7 +8,7 @@ import Navbar from './components/Navbar/Navbar'
 
 function App() {
 
-  const [loginStatus, setLoginStatus] = useState('');
+  const [loginStatus, setLoginStatus] = useState('Onlogin');
   const [body,setBody] = useState(<Register/>);
   useEffect(()=>{
     switch(loginStatus){
