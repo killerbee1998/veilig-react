@@ -10,10 +10,15 @@ nav{
   color:rgba(20,20,20,0.7);
 }
 
-#logout{
+.navBody{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.navItem{
   padding: 1rem;
 }
 
-#logout:hover{
+.navItem:hover{
   color:rgba(20,20,20,1);
 }
