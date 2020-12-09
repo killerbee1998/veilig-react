@@ -5,16 +5,20 @@ import './App.css';
 import Login from './components/body/Login/Login'
 import Register from './components/body/Register/Register'
 import Navbar from './components/Navbar/Navbar'
+import PassList from './components/body/PassList/PassList'
 
 function App() {
 
-  const [loginStatus, setLoginStatus] = useState('Onlogin');
-  const [body,setBody] = useState(<Register/>);
-
+  const [loginStatus, setLoginStatus] = useState('onLogin');
+  const [body,setBody] = useState(<Login/>);
+  
+  let token = localStorage.getItem('token')
+  let key = localStorage.getItem('key');
+   
   useEffect(()=>{
     switch(loginStatus){
       case 'LoggedIn':
-          setBody(<Login/>)
+          setBody(<PassList/>)
           break
       case 'onRegister':
           setBody(<Register/>)
