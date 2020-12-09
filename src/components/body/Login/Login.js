@@ -47,14 +47,14 @@ const Login = () =>{
                 <form>
                     <div className = 'form-group'>
                         <label htmlFor="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={onEmailChange}></input>
+                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={onEmailChange}></input>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" onChange={onPassChange}></input>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputPassword1">Password</label>
+                        <input type="password" className="form-control" id="exampleInputPassword1" onChange={onPassChange}></input>
                     </div>
 
-                    <div type="submit" class="btn btn-primary btn-lg" id="btn-submit-login" onClick={onLoginSubmit}>Submit</div>
+                    <div type="submit" className="btn btn-primary btn-lg" id="btn-submit-login" onClick={onLoginSubmit}>Submit</div>
 
                 </form>
 

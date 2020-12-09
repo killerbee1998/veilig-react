@@ -10,6 +10,7 @@ function App() {
 
   const [loginStatus, setLoginStatus] = useState('Onlogin');
   const [body,setBody] = useState(<Register/>);
+
   useEffect(()=>{
     switch(loginStatus){
       case 'LoggedIn':
@@ -25,7 +26,7 @@ function App() {
           break
     }
   }, [loginStatus])
-  
+
   return (
     <div className="App">
       <Navbar loginStatus = {loginStatus} setLoginStatus = {setLoginStatus}/>
