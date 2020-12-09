@@ -4,7 +4,7 @@ import './Login.css'
 
 import {loginUrl} from '../../../urlData/urlData'
 
-const Login = () =>{
+const Login = ({refreshToken}) =>{
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPass, setLoginPass] = useState('')
     
@@ -30,9 +30,13 @@ const Login = () =>{
           body: JSON.stringify(data) 
         });
         const responseData = await response.json()
-        console.log(responseData)
-        localStorage.setItem('token', responseData.token)
-        localStorage.setItem('token', responseData.key)
+        
+        if(responseData !== 'LOGIN ERROR'){
+            localStorage.setItem('token', responseData.token)
+            localStorage.setItem('key', responseData.key)
+            refreshToken();
+        }
+
         return responseData; 
       }
 
