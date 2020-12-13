@@ -14,13 +14,17 @@ function App() {
   
   let token = localStorage.getItem('token')
   let key = localStorage.getItem('key');
-
+  
   const refreshToken = () =>{
     let token = localStorage.getItem('token')
     let key = localStorage.getItem('key');
   }
 
   useEffect(()=>{
+    if(key || token){
+      setLoginStatus('LoggedIn')
+    }
+
     switch(loginStatus){
       case 'LoggedIn':
           setBody(<PassList/>)
@@ -29,7 +33,8 @@ function App() {
           setBody(<Register/>)
           break
       case 'onLogin':
-          setBody(<Login setLoginStatus = {setLoginStatus} setrefreshToken={refreshToken}/>)           
+          setBody(<Login setLoginStatus = {setLoginStatus} setrefreshToken={refreshToken}/>)
+          break
       default:
           setBody(<Login setLoginStatus = {setLoginStatus} refreshToken={refreshToken}/>)
           break
