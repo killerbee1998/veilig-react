@@ -18,7 +18,7 @@ function App() {
   
   const refreshToken = () =>{
     setToken(localStorage.getItem('token'))
-    setToken(localStorage.getItem('key'))
+    setKey(localStorage.getItem('key'))
   }
 
   useEffect(()=>{
