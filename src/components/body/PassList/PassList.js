@@ -24,7 +24,7 @@ const PassList = ({token, key}) =>{
     }
 
     useEffect( async() =>{
-        let data = fetchUserPass()
+        let data = await fetchUserPass()
         console.log(data)
     }, [token, key])
     
