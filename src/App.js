@@ -22,11 +22,11 @@ function App() {
 
   useEffect(()=>{
     if(key || token){
-      setLoginStatus('LoggedIn')
+      setLoginStatus('loggedIn')
     }
 
     switch(loginStatus){
-      case 'LoggedIn':
+      case 'loggedIn':
           setBody(<PassList/>)
           break
       case 'onRegister':

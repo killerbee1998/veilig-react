@@ -15,7 +15,7 @@ const Navbar = ({loginStatus, setLoginStatus}) =>{
 
     useEffect( ()=>{
         switch(loginStatus){
-            case 'LoggedIn':
+            case 'loggedIn':
                 setNavBody(<div className = 'navItem'> Log Out</div>)
                 break
             case 'onRegister':
