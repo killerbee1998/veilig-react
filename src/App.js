@@ -16,8 +16,8 @@ function App() {
   let key = localStorage.getItem('key');
   
   const refreshToken = () =>{
-    let token = localStorage.getItem('token')
-    let key = localStorage.getItem('key');
+    token = localStorage.getItem('token')
+    key = localStorage.getItem('key');
   }
 
   useEffect(()=>{
