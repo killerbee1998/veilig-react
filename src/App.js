@@ -12,12 +12,13 @@ function App() {
   const [loginStatus, setLoginStatus] = useState('onLogin');
   const [body,setBody] = useState(<Login/>);
   
-  let token = localStorage.getItem('token')
-  let key = localStorage.getItem('key');
+  const [token, setToken] = useState(localStorage.getItem('token'))
+  const [key, setKey] = useState(localStorage.getItem('key'))
+  
   
   const refreshToken = () =>{
-    token = localStorage.getItem('token')
-    key = localStorage.getItem('key');
+    setToken(localStorage.getItem('token'))
+    setToken(localStorage.getItem('key'))
   }
 
   useEffect(()=>{
@@ -33,7 +34,7 @@ function App() {
           setBody(<Register/>)
           break
       case 'onLogin':
-          setBody(<Login setLoginStatus = {setLoginStatus} setrefreshToken={refreshToken}/>)
+          setBody(<Login setLoginStatus = {setLoginStatus} refreshToken={refreshToken}/>)
           break
       default:
           setBody(<Login setLoginStatus = {setLoginStatus} refreshToken={refreshToken}/>)
