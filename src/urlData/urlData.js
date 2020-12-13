@@ -7,3 +7,5 @@ const displayPassUrl = ROOT_URL+'store/displayPass'
 
 module.exports.loginUrl = loginUrl
 module.exports.registerUrl = registerUrl 
+
+module.exports.displayPassUrl = displayPassUrl
