@@ -27,7 +27,7 @@ function App() {
 
     switch(loginStatus){
       case 'loggedIn':
-          setBody(<PassList/>)
+          setBody(<PassList token = {token} key = {key}/>)
           break
       case 'onRegister':
           setBody(<Register/>)

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PassList = () =>{
+const PassList = ({token, key}) =>{
     const fetchUserPass = async(event) => {
         const data = {token: token, key: key}
         const response = await fetch(displayPassnUrl, {
