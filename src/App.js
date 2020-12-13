@@ -14,8 +14,7 @@ function App() {
   
   const [token, setToken] = useState(localStorage.getItem('token'))
   const [key, setKey] = useState(localStorage.getItem('key'))
-  
-  
+    
   const refreshToken = () =>{
     setToken(localStorage.getItem('token'))
     setKey(localStorage.getItem('key'))

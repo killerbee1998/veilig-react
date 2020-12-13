@@ -35,7 +35,7 @@ const Login = ({setLoginStatus,refreshToken}) =>{
             localStorage.setItem('token', responseData.token)
             localStorage.setItem('key', responseData.key)
             refreshToken();
-            setLoginStatus('loggedIn')
+            setLoginStatus('LoggedIn')
         }
 
         return responseData; 
