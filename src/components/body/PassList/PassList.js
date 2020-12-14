@@ -6,7 +6,7 @@ const PassList = () =>{
     
     const fetchUserPass = async() => {
         const data = {token: localStorage.getItem('token'), authKey: localStorage.getItem('key')}
-        console.log(data)
+        
         const response = await fetch(displayPassUrl, {
           method: 'POST',
           mode: 'cors', 
