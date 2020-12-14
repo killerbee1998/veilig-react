@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 
 import {displayPassUrl} from '../../../urlData/urlData'
 
-const PassList = ({token, key}) =>{
+const PassList = () =>{
     
     const fetchUserPass = async() => {
-        const data = {token: token, key: key}
+        const data = {token: localStorage.getItem('token'), authKey: localStorage.getItem('key')}
+        console.log(data)
         const response = await fetch(displayPassUrl, {
           method: 'POST',
           mode: 'cors', 
@@ -26,7 +27,7 @@ const PassList = ({token, key}) =>{
     useEffect( async() =>{
         let data = await fetchUserPass()
         console.log(data)
-    }, [token, key])
+    }, [localStorage.getItem('token'), localStorage.getItem('key')])
     
 
     const passList = [];

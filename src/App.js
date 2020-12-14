@@ -12,31 +12,23 @@ function App() {
   const [loginStatus, setLoginStatus] = useState('onLogin');
   const [body,setBody] = useState(<Login/>);
   
-  const [token, setToken] = useState(localStorage.getItem('token'))
-  const [key, setKey] = useState(localStorage.getItem('key'))
-    
-  const refreshToken = () =>{
-    setToken(localStorage.getItem('token'))
-    setKey(localStorage.getItem('key'))
-  }
-
   useEffect(()=>{
-    if(key || token){
+    if(localStorage.getItem('token') || localStorage.getItem('token')){
       setLoginStatus('loggedIn')
     }
 
     switch(loginStatus){
       case 'loggedIn':
-          setBody(<PassList token = {token} key = {key}/>)
+          setBody(<PassList/>)
           break
       case 'onRegister':
           setBody(<Register/>)
           break
       case 'onLogin':
-          setBody(<Login setLoginStatus = {setLoginStatus} refreshToken={refreshToken}/>)
+          setBody(<Login setLoginStatus = {setLoginStatus}/>)
           break
       default:
-          setBody(<Login setLoginStatus = {setLoginStatus} refreshToken={refreshToken}/>)
+          setBody(<Login setLoginStatus = {setLoginStatus}/>)
           break
     }
   }, [loginStatus])

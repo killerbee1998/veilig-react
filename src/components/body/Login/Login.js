@@ -4,7 +4,7 @@ import './Login.css'
 
 import {loginUrl} from '../../../urlData/urlData'
 
-const Login = ({setLoginStatus,refreshToken}) =>{
+const Login = ({setLoginStatus}) =>{
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPass, setLoginPass] = useState('')
     
@@ -34,7 +34,6 @@ const Login = ({setLoginStatus,refreshToken}) =>{
         if(responseData !== 'LOGIN ERROR'){
             localStorage.setItem('token', responseData.token)
             localStorage.setItem('key', responseData.key)
-            refreshToken();
             setLoginStatus('loggedIn')
         }
 
