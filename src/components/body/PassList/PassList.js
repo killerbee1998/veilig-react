@@ -2,11 +2,13 @@ import React, { useEffect } from 'react'
 
 import {displayPassUrl} from '../../../urlData/urlData'
 
+import './PassList.css'
+
 const PassList = () =>{
     
     const fetchUserPass = async() => {
         const data = {token: localStorage.getItem('token'), authKey: localStorage.getItem('key')}
-        
+
         const response = await fetch(displayPassUrl, {
           method: 'POST',
           mode: 'cors', 
@@ -34,6 +36,10 @@ const PassList = () =>{
     return(
         <div>
             {passList}
+
+            <div className = 'addBtn'>
+                <button type="button" class="btn btn-primary">Add Item</button>
+            </div>
         </div>
     )
 }

@@ -1,0 +1,13 @@
+.addBtn{
+    text-align: left;
+    margin: 2rem;
+}
+
+.btn-primary{
+    background-color:  #0275d8;
+    color: #ffffff;
+}
+
+.btn:hover{
+    background-color:  #0275d8;
+}
