@@ -44,7 +44,7 @@ const PassList = () =>{
             {passList}
 
             <div className = 'addBtn'>
-                <button type="button" class="btn btn-primary" onClick ={handleShow}>Add Item</button>
+                <button type="button" className="btn btn-primary" onClick ={handleShow}>Add Item</button>
             </div>
 
             <PassForm show = {show} handleClose = {handleClose}/>
