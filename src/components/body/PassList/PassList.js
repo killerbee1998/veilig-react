@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import {Modal, Button} from 'react-bootstrap';
+import PassForm from './PassForm'
 
 import {displayPassUrl} from '../../../urlData/urlData'
 
@@ -46,21 +46,8 @@ const PassList = () =>{
             <div className = 'addBtn'>
                 <button type="button" class="btn btn-primary" onClick ={handleShow}>Add Item</button>
             </div>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-                    </Button>
-                </Modal.Footer>
-            </Modal>
 
+            <PassForm show = {show} handleClose = {handleClose}/>
         </div>
     )
 }
