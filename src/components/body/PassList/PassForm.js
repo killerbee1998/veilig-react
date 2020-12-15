@@ -20,7 +20,8 @@ const PassForm = ({show, handleClose}) =>{
 
                 <div>
                     <p>Password</p>
-                    <input type='password'></input>
+                    <input type='password'></input>    
+                    <img src = 'spin.svg' id = 'genPass'></img>
                 </div>
                 
             </Modal.Body>
