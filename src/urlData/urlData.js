@@ -5,7 +5,11 @@ const registerUrl = ROOT_URL+'account/register'
 
 const displayPassUrl = ROOT_URL+'store/displayPass'
 
+const genPassUrl = ROOT_URL+'pass'
+
 module.exports.loginUrl = loginUrl
 module.exports.registerUrl = registerUrl 
 
 module.exports.displayPassUrl = displayPassUrl
+
+module.exports.genPassUrl = genPassUrl
