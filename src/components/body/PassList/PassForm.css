@@ -1,0 +1,11 @@
+#genPass{
+    margin: 0rem 1rem;
+    padding: 0.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 20%;
+}
+
+#genPass:hover{
+    background-color: #0275d8;;
+}
