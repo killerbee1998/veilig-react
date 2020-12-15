@@ -1,9 +1,18 @@
 import React from 'react'
 import {Modal, Button} from 'react-bootstrap';
 
+import genPassUrl from '../../../urlData/urlData'
+
 import './PassForm.css'
 
 const PassForm = ({show, handleClose}) =>{
+    
+    const fetchGenPass = async() => {
+        const response = await fetch(genPassUrl);
+        const responseData = await response.json()
+        return responseData; 
+    }
+
     return(
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -22,8 +31,8 @@ const PassForm = ({show, handleClose}) =>{
 
                 <div>
                     <p>Password</p>
-                    <input type='password'></input>    
-                    <img src = 'spin.svg' id = 'genPass'></img>
+                    <input type='password' defaultValue='Password'></input>    
+                    <img src = 'spin.svg' id = 'genPass' onClick={fetchGenPass}></img>
                 </div>
                 
             </Modal.Body>
