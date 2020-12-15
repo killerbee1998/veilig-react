@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Modal, Button} from 'react-bootstrap';
 
 import genPassUrl from '../../../urlData/urlData'
@@ -6,7 +6,8 @@ import genPassUrl from '../../../urlData/urlData'
 import './PassForm.css'
 
 const PassForm = ({show, handleClose}) =>{
-    
+    const [userPass, setUserPass] = useState('')
+
     const fetchGenPass = async() => {
         const response = await fetch(genPassUrl);
         const responseData = await response.json()
@@ -31,7 +32,7 @@ const PassForm = ({show, handleClose}) =>{
 
                 <div>
                     <p>Password</p>
-                    <input type='password' defaultValue='Password'></input>    
+                    <input type='password' defaultValue={userPass}></input>    
                     <img src = 'spin.svg' id = 'genPass' onClick={fetchGenPass}></img>
                 </div>
                 
