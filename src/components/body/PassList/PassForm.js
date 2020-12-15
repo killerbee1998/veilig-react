@@ -5,9 +5,25 @@ const PassForm = ({show, handleClose}) =>{
     return(
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Add Item</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+            <Modal.Body>
+                <div>
+                    <p>User Name</p>
+                    <input type='text'></input>
+                </div>
+
+                <div>
+                    <p>URL</p>
+                    <input type='text'></input>
+                </div>
+
+                <div>
+                    <p>Password</p>
+                    <input type='password'></input>
+                </div>
+                
+            </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Close
