@@ -1,11 +1,17 @@
-#genPass{
-    margin: 0rem 1rem;
+.passItem{
+    margin: 0rem 0.5rem;
     padding: 0.2rem;
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 20%;
 }
 
-#genPass:hover{
+.passItem:hover{
     background-color: #0275d8;;
+}
+
+#passTypeBox{
+    margin: 0rem .5rem;
+    text-align: center;
+    vertical-align: middle;
 }

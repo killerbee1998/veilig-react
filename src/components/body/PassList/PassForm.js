@@ -60,10 +60,10 @@ const PassForm = ({show, handleClose}) =>{
                 <div>
                     <p>Password</p>
                     <input type={inputType} value={userPass} onChange={handlePassChange}></input>
-                    <img src = 'spin.svg' id = 'genPass' onClick={genPass}></img>
-                    <img src = 'view.svg' id = 'genPass' onClick={changeInputType}></img>
-                    <input type='checkbox' id='passtypeBox' onClick={changePassType}></input>
-                    <label htmlFor='passtypeBox'> Passphrase</label>
+                    <img src = 'spin.svg' class = 'passItem' onClick={genPass}></img>
+                    <img src = 'view.svg' class = 'passItem' onClick={changeInputType}></img>
+                    <input type='checkbox' id='passTypeBox' onClick={changePassType}></input>
+                    <label htmlFor='passTypeBox'> Passphrase</label>
                 </div>
                 
             </Modal.Body>
