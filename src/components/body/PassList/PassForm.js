@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import {Modal, Button} from 'react-bootstrap';
+import {Modal, Button, FormCheck} from 'react-bootstrap';
 
 import {genPassUrl} from '../../../urlData/urlData'
 
 import './PassForm.css'
 
 const PassForm = ({show, handleClose}) =>{
-    const [passType, setPassType] = useState('password')
+    const [inputType, setInputType] = useState('password')
     const [userPass, setUserPass] = useState('')
 
     const genPass = async() => {
@@ -16,10 +16,10 @@ const PassForm = ({show, handleClose}) =>{
     }
 
     const changeInputType = () =>{
-        if(passType === 'password'){
-            setPassType('text')
+        if(inputType === 'password'){
+            setInputType('text')
         }else{
-            setPassType('password')
+            setInputType('password')
         }
     }
 
@@ -45,7 +45,7 @@ const PassForm = ({show, handleClose}) =>{
 
                 <div>
                     <p>Password</p>
-                    <input type={passType} value={userPass} onChange={handlePassChange}></input>
+                    <input type={inputType} value={userPass} onChange={handlePassChange}></input>
                     <img src = 'spin.svg' id = 'genPass' onClick={genPass}></img>
                     <img src = 'view.svg' id = 'genPass' onClick={changeInputType}></img>
                 </div>
