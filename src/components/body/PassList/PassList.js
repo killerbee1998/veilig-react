@@ -9,6 +9,7 @@ import PassItem from './PassItem'
 
 const PassList = () =>{
     const [show, setShow] = useState(false);
+    const [passList, setPassList] = useState([])
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);  
@@ -35,11 +36,15 @@ const PassList = () =>{
 
     useEffect( async() =>{
         let data = await fetchUserPass()
+        let temp = [];
+        for(let i=0;i<data.length;++i){
+            temp.push(<PassItem/>)
+        }
+        setPassList(temp)
         console.log(data)
     }, [localStorage.getItem('token'), localStorage.getItem('key')])
     
 
-    const passList = [<PassItem/>];
     return(
         <div>
             {passList}
