@@ -13,10 +13,16 @@ const Navbar = ({loginStatus, setLoginStatus}) =>{
         setLoginStatus('onRegister');
     }
 
+    const onLogoutClick = () =>{
+        localStorage.setItem('token', [])
+        localStorage.setItem('key', [])
+        setLoginStatus('onLogin')
+    }
+
     useEffect( ()=>{
         switch(loginStatus){
             case 'loggedIn':
-                setNavBody(<div className = 'navItem'> Log Out</div>)
+                setNavBody(<div className = 'navItem' onClick={onLogoutClick}> Log Out</div>)
                 break
             case 'onRegister':
                 setNavBody(<div className = 'navItem' onClick = {onLoginClick}> Log In</div>)
