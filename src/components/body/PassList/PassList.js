@@ -5,6 +5,7 @@ import PassForm from './PassForm'
 import {displayPassUrl} from '../../../urlData/urlData'
 
 import './PassList.css'
+import PassItem from './PassItem'
 
 const PassList = () =>{
     const [show, setShow] = useState(false);
@@ -38,7 +39,7 @@ const PassList = () =>{
     }, [localStorage.getItem('token'), localStorage.getItem('key')])
     
 
-    const passList = [];
+    const passList = [<PassItem/>];
     return(
         <div>
             {passList}
