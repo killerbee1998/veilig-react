@@ -47,6 +47,14 @@ const PassForm = ({show, handleClose}) =>{
         setUserPass(event.target.value)
     }
 
+    const handleNameChange = (event) =>{
+        setUserName(event.target.value)
+    }
+
+    const handleUrlChange = (event) =>{
+        setUserUrl(event.target.value)
+    }
+
     return(
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -55,12 +63,12 @@ const PassForm = ({show, handleClose}) =>{
             <Modal.Body>
                 <div>
                     <p>User Name</p>
-                    <input type='text'></input>
+                    <input type='text' onChange={handleNameChange}></input>
                 </div>
 
                 <div>
                     <p>URL</p>
-                    <input type='text'></input>
+                    <input type='text' onChange={handleUrlChange}></input>
                 </div>
 
                 <div>
