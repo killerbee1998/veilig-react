@@ -12,7 +12,7 @@ const PassForm = ({show, handleClose}) =>{
     const genPass = async() => {
         const response = await fetch(genPassUrl);
         const responseData = await response.json()
-        setUserPass(response)
+        setUserPass(responseData)
     }
 
     const changeInputType = () =>{
