@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {Modal, Button, FormCheck} from 'react-bootstrap';
 
-import {genPassUrl, genPassphraseUrl} from '../../../urlData/urlData'
+import {genPassUrl, genPassphraseUrl, savePassUrl} from '../../../urlData/urlData'
 
 import './PassForm.css'
 
@@ -13,6 +13,26 @@ const PassForm = ({show, handleClose}) =>{
     const [inputType, setInputType] = useState('password')
     const [passType,setPassType] = useState('password')
     const [viewImgSrc, setViewImgSrc] = useState('view.svg')
+    
+    const saveUserPass = async() => {
+        const data = {user_url: userUrl, user_name:userName, user_pass: userPass ,token: localStorage.getItem('token'), authKey: localStorage.getItem('key')}
+
+        const response = await fetch(savePassUrl, {
+          method: 'POST',
+          mode: 'cors', 
+          cache: 'no-cache', 
+          credentials: 'same-origin', 
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          redirect: 'follow',
+          referrerPolicy: 'no-referrer',
+          body: JSON.stringify(data) 
+        });
+        const responseData = await response.json()
+        
+        return responseData; 
+    }
 
     const genPass = async() => {
         let response = ''
@@ -85,7 +105,7 @@ const PassForm = ({show, handleClose}) =>{
                 <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
+                <Button variant="primary" onClick={saveUserPass}>
                     Save Changes
                 </Button>
             </Modal.Footer>
