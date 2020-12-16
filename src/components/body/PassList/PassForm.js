@@ -6,8 +6,11 @@ import {genPassUrl, genPassphraseUrl} from '../../../urlData/urlData'
 import './PassForm.css'
 
 const PassForm = ({show, handleClose}) =>{
-    const [inputType, setInputType] = useState('password')
+    const [userName, setUserName] = useState('')
+    const [userUrl, setUserUrl] = useState('')
     const [userPass, setUserPass] = useState('')
+
+    const [inputType, setInputType] = useState('password')
     const [passType,setPassType] = useState('password')
     const [viewImgSrc, setViewImgSrc] = useState('view.svg')
 
