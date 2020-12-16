@@ -41,7 +41,7 @@ const PassList = () =>{
             temp.push(<PassItem userName={data[i].user_name} userUrl={data[i].user_url} userPass={data[i].user_pass}/>)
         }
         setPassList(temp)
-    }, [localStorage.getItem('token'), localStorage.getItem('key')])
+    }, [localStorage.getItem('token'), localStorage.getItem('key'), show])
     
 
     return(
