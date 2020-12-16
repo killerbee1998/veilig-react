@@ -6,12 +6,21 @@ import {genPassUrl} from '../../../urlData/urlData'
 import './PassForm.css'
 
 const PassForm = ({show, handleClose}) =>{
+    const [passType, setPassType] = useState('password')
     const [userPass, setUserPass] = useState('')
 
     const genPass = async() => {
         const response = await fetch(genPassUrl);
         const responseData = await response.json()
         setUserPass(response)
+    }
+
+    const changeInputType = () =>{
+        if(passType === 'password'){
+            setPassType('text')
+        }else{
+            setPassType('password')
+        }
     }
 
     const handlePassChange = (event) =>{
@@ -36,8 +45,9 @@ const PassForm = ({show, handleClose}) =>{
 
                 <div>
                     <p>Password</p>
-                    <input type='password' value={userPass} onChange={handlePassChange}></input>
+                    <input type={passType} value={userPass} onChange={handlePassChange}></input>
                     <img src = 'spin.svg' id = 'genPass' onClick={genPass}></img>
+                    <img src = 'view.svg' id = 'genPass' onClick={changeInputType}></img>
                 </div>
                 
             </Modal.Body>
