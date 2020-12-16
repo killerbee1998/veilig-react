@@ -9,6 +9,7 @@ const PassForm = ({show, handleClose}) =>{
     const [inputType, setInputType] = useState('password')
     const [userPass, setUserPass] = useState('')
     const [passType,setPassType] = useState('password')
+    const [viewImgSrc, setViewImgSrc] = useState('view.svg')
 
     const genPass = async() => {
         let response = ''
@@ -24,8 +25,10 @@ const PassForm = ({show, handleClose}) =>{
     const changeInputType = () =>{
         if(inputType === 'password'){
             setInputType('text')
+            setViewImgSrc('view.svg')
         }else{
             setInputType('password')
+            setViewImgSrc('visibility.svg')
         }
     }
 
@@ -61,7 +64,7 @@ const PassForm = ({show, handleClose}) =>{
                     <p>Password</p>
                     <input type={inputType} value={userPass} onChange={handlePassChange}></input>
                     <img src = 'spin.svg' class = 'passItem' onClick={genPass}></img>
-                    <img src = 'view.svg' class = 'passItem' onClick={changeInputType}></img>
+                    <img src = {viewImgSrc} class = 'passItem' onClick={changeInputType}></img>
                     <input type='checkbox' id='passTypeBox' onClick={changePassType}></input>
                     <label htmlFor='passTypeBox'> Passphrase</label>
                 </div>
