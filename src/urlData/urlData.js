@@ -14,3 +14,4 @@ module.exports.registerUrl = registerUrl
 module.exports.displayPassUrl = displayPassUrl
 
 module.exports.genPassUrl = genPassUrl
+module.exports.genPassphraseUrl = genPasshraseUrl
