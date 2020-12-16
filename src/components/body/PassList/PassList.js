@@ -38,7 +38,7 @@ const PassList = () =>{
         let data = await fetchUserPass()
         let temp = [];
         for(let i=0;i<data.length;++i){
-            temp.push(<PassItem/>)
+            temp.push(<PassItem userName={data[i].user_name} userUrl={data[i].user_url} userPass={data[i].user_pass}/>)
         }
         setPassList(temp)
         console.log(data)
