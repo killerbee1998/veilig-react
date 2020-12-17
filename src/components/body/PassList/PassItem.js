@@ -3,7 +3,7 @@ import {Card} from 'react-bootstrap'
 
 import './PassItem.css'
 
-const PassItem = ({cardTitle}) =>{
+const PassItem = ({cardTitle, ogVals}) =>{
     const [cardItemStyle, setCardItemStyle] = useState({
         width: '18rem',
         margin: '1rem',
