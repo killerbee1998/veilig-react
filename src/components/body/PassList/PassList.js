@@ -10,6 +10,8 @@ import './PassList.css'
 const PassList = () =>{
     const [show, setShow] = useState(false);
     const [passList, setPassList] = useState([])
+    const [ogVals, setOgVals] = useState(['','',''])
+
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);  
