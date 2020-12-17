@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
 import PassForm from './PassForm'
+import PassItem from './PassItem'
 
 import {displayPassUrl} from '../../../urlData/urlData'
 
 import './PassList.css'
-import PassItem from './PassItem'
 
 const PassList = () =>{
     const [show, setShow] = useState(false);
@@ -39,7 +39,7 @@ const PassList = () =>{
         let temp = [];
         for(let i=0;i<data.length;++i){
             if(data[i].user_name!==[]){
-                temp.push(<PassItem cardTitle={data[i].user_name}/>)
+                temp.push(<PassItem cardTitle={data[i].user_name} className='cardItem'/>)
             }else if(data[i].user_url!==[]){
                 temp.push(<PassItem cardTitle ={data[i].user_url}/>)
             }else{
