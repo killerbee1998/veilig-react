@@ -32,7 +32,7 @@ const PassItem = ({cardTitle, ogVals, setOgVals}) =>{
     }
 
     return(
-        <Card style={cardItemStyle} onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
+        <Card style={cardItemStyle} onClick={handleOnClick}  onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
             <Card.Body>
                 <Card.Title>{cardTitle}</Card.Title>
             </Card.Body>
