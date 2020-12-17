@@ -3,7 +3,7 @@ import {Card} from 'react-bootstrap'
 
 import './PassItem.css'
 
-const PassItem = ({cardTitle, ogVals, setOgVals}) =>{
+const PassItem = ({cardTitle, ogVals, setOgVals, handleShow}) =>{
     const [cardItemStyle, setCardItemStyle] = useState({
         width: '18rem',
         margin: '1rem',
@@ -12,6 +12,7 @@ const PassItem = ({cardTitle, ogVals, setOgVals}) =>{
     
     const handleOnClick = () =>{
         setOgVals(ogVals)
+        handleShow()
     }
 
     const handleOnMouseEnter = () =>{
