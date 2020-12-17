@@ -3,13 +3,17 @@ import {Card} from 'react-bootstrap'
 
 import './PassItem.css'
 
-const PassItem = ({cardTitle, ogVals}) =>{
+const PassItem = ({cardTitle, ogVals, setOgVals}) =>{
     const [cardItemStyle, setCardItemStyle] = useState({
         width: '18rem',
         margin: '1rem',
         backgroundColor:'rgba(240,244,20,0.6)',
     })
     
+    const handleOnClick = () =>{
+        setOgVals(ogVals)
+    }
+
     const handleOnMouseEnter = () =>{
         setCardItemStyle({
             width: '18rem',
