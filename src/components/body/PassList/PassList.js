@@ -41,11 +41,11 @@ const PassList = () =>{
         let temp = [];
         for(let i=0;i<data.length;++i){
             if(data[i].user_name!==[]){
-                temp.push(<PassItem cardTitle={data[i].user_name} ogVals={setOgVals([data[i].user_name, data[i].user_url, data[i].user_pass])}/>)
+                temp.push(<PassItem cardTitle={data[i].user_name} ogVals={[data[i].user_name, data[i].user_url, data[i].user_pass]} setOgVals={setOgVals}/>)
             }else if(data[i].user_url!==[]){
-                temp.push(<PassItem cardTitle ={data[i].user_url} ogVals={setOgVals([data[i].user_name, data[i].user_url, data[i].user_pass])}/>)
+                temp.push(<PassItem cardTitle ={data[i].user_url} ogVals={[data[i].user_name, data[i].user_url, data[i].user_pass]} setOgVals={setOgVals}/>)
             }else{
-                temp.push(<PassItem cardTitle ={data[i].user_pass} ogVals={setOgVals([data[i].user_name, data[i].user_url, data[i].user_pass])}/>)
+                temp.push(<PassItem cardTitle ={data[i].user_pass} ogVals={[data[i].user_name, data[i].user_url, data[i].user_pass]} setOgVals={setOgVals}/>)
             }
         }
         setPassList(temp)
