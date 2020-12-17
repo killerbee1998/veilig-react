@@ -52,7 +52,10 @@ const PassList = () =>{
 
     return(
         <div>
-            {passList}
+            <div className='cardListHolder'>
+                {passList}
+            </div>
+            
 
             <div className = 'addBtn'>
                 <button type="button" className="btn btn-primary" onClick ={handleShow}>Add Item</button>

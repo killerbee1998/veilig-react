@@ -11,3 +11,8 @@
 .btn:hover{
     background-color:  #0275d8;
 }
+
+.cardListHolder{
+    display: flex;
+    flex-direction: row;
+}
