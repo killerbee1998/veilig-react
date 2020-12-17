@@ -38,7 +38,13 @@ const PassList = () =>{
         let data = await fetchUserPass()
         let temp = [];
         for(let i=0;i<data.length;++i){
-            temp.push(<PassItem userName={data[i].user_name} userUrl={data[i].user_url} userPass={data[i].user_pass}/>)
+            if(data[i].user_name!==[]){
+                temp.push(<PassItem cardTitle={data[i].user_name}/>)
+            }else if(data[i].user_url!==[]){
+                temp.push(<PassItem cardTitle ={data[i].user_url}/>)
+            }else{
+                temp.push(<PassItem cardTitle ={data[i].user_pass}/>)
+            }
         }
         setPassList(temp)
     }, [localStorage.getItem('token'), localStorage.getItem('key'), show])
