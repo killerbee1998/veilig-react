@@ -8,6 +8,8 @@ const Login = ({setLoginStatus}) =>{
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPass, setLoginPass] = useState('')
     
+    const [errorMsg, setErrorMsg] = useState(<div></div>)
+
     const onEmailChange = (event) =>{
         setLoginEmail(event.target.value)
     }
@@ -17,6 +19,7 @@ const Login = ({setLoginStatus}) =>{
 
     const onLoginSubmit = async(event) => {
         const data = {email: loginEmail, pass: loginPass}
+        
         const response = await fetch(loginUrl, {
           method: 'POST',
           mode: 'cors', 
@@ -29,15 +32,17 @@ const Login = ({setLoginStatus}) =>{
           referrerPolicy: 'no-referrer',
           body: JSON.stringify(data) 
         });
-        const responseData = await response.json()
-        
-        if(responseData !== 'LOGIN ERROR'){
+
+        if(response.status === 200){
+            setErrorMsg(<div></div>)
+            const responseData = await response.json()
             localStorage.setItem('token', responseData.token)
             localStorage.setItem('key', responseData.key)
             setLoginStatus('loggedIn')
+        }else{
+            setErrorMsg(<div className = 'errorMsg'>Either Email or Password is wrong. Try again</div>)
         }
 
-        return responseData; 
       }
 
     return(
@@ -49,7 +54,9 @@ const Login = ({setLoginStatus}) =>{
             <div className="container-form">
 
                 <h1>Login</h1>
-
+                <div>
+                    {errorMsg}
+                </div>
                 <form>
                     <div className = 'form-group'>
                         <label htmlFor="exampleInputEmail1">Email</label>

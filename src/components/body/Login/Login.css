@@ -9,6 +9,10 @@ body{
   background-size: contain;
 }
 
+.errorMsg{
+  margin: 1rem;
+  color: red
+}
 
 .coloured-section{
   display: flex;
