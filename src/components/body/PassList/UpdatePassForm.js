@@ -3,7 +3,7 @@ import {Modal, Button, FormCheck} from 'react-bootstrap';
 
 import {genPassUrl, genPassphraseUrl, savePassUrl} from '../../../urlData/urlData'
 
-import './UpdatePassForm.css'
+import './PassForm.css'
 
 const UpdatePassForm = ({show, handleClose, og_userName, og_userUrl, og_userPass}) =>{
     const [userName, setUserName] = useState('')
@@ -99,8 +99,8 @@ const UpdatePassForm = ({show, handleClose, og_userName, og_userUrl, og_userPass
                 <div>
                     <p>Password</p>
                     <input type={inputType} value={userPass} onChange={handlePassChange}></input>
-                    <img src = 'spin.svg' class = 'passItem' onClick={genPass}></img>
-                    <img src = {viewImgSrc} class = 'passItem' onClick={changeInputType}></img>
+                    <img src = 'spin.svg' className = 'passItem' onClick={genPass}></img>
+                    <img src = {viewImgSrc} className = 'passItem' onClick={changeInputType}></img>
                     <input type='checkbox' id='passTypeBox' onClick={changePassType}></input>
                     <label htmlFor='passTypeBox'> Passphrase</label>
                 </div>
