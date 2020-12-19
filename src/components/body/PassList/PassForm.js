@@ -12,7 +12,7 @@ const PassForm = ({show, handleClose, updatePassList}) =>{
 
     const [inputType, setInputType] = useState('password')
     const [passType,setPassType] = useState('password')
-    const [viewImgSrc, setViewImgSrc] = useState('view.svg')
+    const [viewImgSrc, setViewImgSrc] = useState('visibility.svg')
 
     const saveUserPass = async() => {
         const data = {user_url: userUrl, user_name:userName, user_pass: userPass ,token: localStorage.getItem('token'), authKey: localStorage.getItem('key')}

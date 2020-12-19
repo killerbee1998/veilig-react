@@ -12,7 +12,7 @@ const UpdatePassForm = ({show, handleClose, og_userName, og_userUrl, og_userPass
 
     const [inputType, setInputType] = useState('password')
     const [passType,setPassType] = useState('password')
-    const [viewImgSrc, setViewImgSrc] = useState('view.svg')
+    const [viewImgSrc, setViewImgSrc] = useState('visibility.svg')
     
     useEffect(() =>{
         setUserName(og_userName)
