@@ -93,8 +93,8 @@ const PassForm = ({show, handleClose}) =>{
                 <div>
                     <p>Password</p>
                     <input type={inputType} value={userPass} onChange={handlePassChange}></input>
-                    <img src = 'spin.svg' class = 'passItem' onClick={genPass}></img>
-                    <img src = {viewImgSrc} class = 'passItem' onClick={changeInputType}></img>
+                    <img src = 'spin.svg' className = 'passItem' onClick={genPass}></img>
+                    <img src = {viewImgSrc} className = 'passItem' onClick={changeInputType}></img>
                     <input type='checkbox' id='passTypeBox' onClick={changePassType}></input>
                     <label htmlFor='passTypeBox'> Passphrase</label>
                 </div>
