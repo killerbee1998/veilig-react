@@ -6,17 +6,22 @@ import {genPassUrl, genPassphraseUrl, savePassUrl} from '../../../urlData/urlDat
 import './PassForm.css'
 
 const PassForm = ({show, handleClose, og_userName, og_userUrl, og_userPass}) =>{
-    const [userName, setUserName] = useState(og_userName)
-    const [userUrl, setUserUrl] = useState(og_userUrl)
-    const [userPass, setUserPass] = useState(og_userPass)
+    const [userName, setUserName] = useState('')
+    const [userUrl, setUserUrl] = useState('')
+    const [userPass, setUserPass] = useState('')
 
     const [inputType, setInputType] = useState('password')
     const [passType,setPassType] = useState('password')
     const [viewImgSrc, setViewImgSrc] = useState('view.svg')
     
+    useEffect(() =>{
+        setUserName(og_userName)
+        setUserUrl(og_userUrl)
+        setUserPass(og_userPass)
+    }, [og_userName,og_userUrl, og_userPass])
+
     const saveUserPass = async() => {
         const data = {user_url: userUrl, user_name:userName, user_pass: userPass ,token: localStorage.getItem('token'), authKey: localStorage.getItem('key')}
-
         const response = await fetch(savePassUrl, {
           method: 'POST',
           mode: 'cors', 
