@@ -5,7 +5,7 @@ import {genPassUrl, genPassphraseUrl, savePassUrl} from '../../../urlData/urlDat
 
 import './PassForm.css'
 
-const PassForm = ({show, handleClose}) =>{
+const PassForm = ({show, handleClose, updatePassList}) =>{
     const [userName, setUserName] = useState('')
     const [userUrl, setUserUrl] = useState('')
     const [userPass, setUserPass] = useState('')
@@ -29,7 +29,7 @@ const PassForm = ({show, handleClose}) =>{
           body: JSON.stringify(data) 
         });
         const responseData = await response.json()
-        
+
         return responseData; 
     }
 
