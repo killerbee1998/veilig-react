@@ -41,7 +41,7 @@ const PassList = () =>{
         return responseData; 
     }
 
-    useEffect( async() =>{
+    const updatePassList = async() =>{
         let data = await fetchUserPass()
         let temp = [];
         for(let i=0;i<data.length;++i){
@@ -54,8 +54,11 @@ const PassList = () =>{
             }
         }
         setPassList(temp)
-    }, [localStorage.getItem('token'), localStorage.getItem('key'), show])
-    
+    }
+
+    useEffect( () =>{
+        updatePassList()
+    }, [localStorage.getItem['token'], localStorage.getItem['key']])
 
     return(
         <div>
@@ -68,7 +71,7 @@ const PassList = () =>{
                 <button type="button" className="btn btn-primary" onClick ={handleShow}>Add Item</button>
             </div>
 
-            <PassForm show = {show} handleClose = {handleClose}/>
+            <PassForm show = {show} handleClose = {handleClose} updatePassList={updatePassList}/>
             <UpdatePassForm show = {showUpdateForm} handleClose = {handleUpdateClose} og_userName={ogVals[0]} og_userUrl={ogVals[1]} og_userPass={ogVals[2]}/>
         </div>
     )
