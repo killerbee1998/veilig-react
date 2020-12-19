@@ -10,6 +10,12 @@ body{
 }
 
 
+.errorMsg{
+  font-size: small;
+  margin: 1rem;
+  color: red
+}
+
 .coloured-section{
   display: flex;
   flex-direction: column;

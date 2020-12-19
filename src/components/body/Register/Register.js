@@ -9,6 +9,8 @@ const Register = () =>{
     const [registerEmail, setRegisterEmail] = useState('')
     const [registerPass, setRegisterPass] = useState('')
 
+    const [errorMsg, setErrorMsg] = useState(<div></div>)
+
     const onEmailChange = (event) =>{
         setRegisterEmail(event.target.value)
     }
@@ -30,9 +32,14 @@ const Register = () =>{
           referrerPolicy: 'no-referrer',
           body: JSON.stringify(data) 
         });
-        const responseData = await response.json()
-        console.log(responseData)
-        return responseData; 
+        console.log(response)
+        if(response.status === 200){
+            setErrorMsg(<div></div>)
+            const responseData = await response.json()
+        }else{
+            setErrorMsg(<div className = 'errorMsg'>Email is already in use. Try again</div>)
+        }
+        
       }
 
     return(
@@ -44,6 +51,10 @@ const Register = () =>{
             <div className="container-form">
 
                 <h1>Register</h1>
+
+                <div>
+                    {errorMsg}
+                </div>
 
                 <form>
                     <div className = 'form-group'>
