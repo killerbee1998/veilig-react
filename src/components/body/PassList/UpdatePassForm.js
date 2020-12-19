@@ -88,12 +88,12 @@ const UpdatePassForm = ({show, handleClose, og_userName, og_userUrl, og_userPass
             <Modal.Body>
                 <div>
                     <p>User Name</p>
-                    <input type='text' onChange={handleNameChange}></input>
+                    <input type='text' value={userName} onChange={handleNameChange}></input>
                 </div>
 
                 <div>
                     <p>URL</p>
-                    <input type='text' onChange={handleUrlChange}></input>
+                    <input type='text' value={userUrl} onChange={handleUrlChange}></input>
                 </div>
 
                 <div>
