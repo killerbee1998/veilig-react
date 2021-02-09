@@ -13,6 +13,7 @@ const PassForm = ({show, handleClose, updatePassList}) =>{
     const [inputType, setInputType] = useState('password')
     const [passType,setPassType] = useState('password')
     const [viewImgSrc, setViewImgSrc] = useState('visibility.svg')
+    const [passFlags, setPassFlags] = useState('000');
 
     const saveUserPass = async() => {
         const data = {user_url: userUrl, user_name:userName, user_pass: userPass ,token: localStorage.getItem('token'), authKey: localStorage.getItem('key')}
@@ -36,9 +37,9 @@ const PassForm = ({show, handleClose, updatePassList}) =>{
     const genPass = async() => {
         let response = ''
         if(passType === 'password'){
-            response = await fetch(genPassUrl);    
+            response = await fetch(genPassUrl +'/passFlags='+passFlags);    
         }else{
-            response = await fetch(genPassphraseUrl);
+            response = await fetch(genPassphraseUrl+'/passFlags='+passFlags);
         }
         const responseData = await response.json()
         setUserPass(responseData)
@@ -59,6 +60,33 @@ const PassForm = ({show, handleClose, updatePassList}) =>{
             setPassType('passphrase')
         }else{
             setPassType('password')
+        }
+    }
+
+    const setNums = () =>{
+        if(passFlags[0] === '0'){
+            setPassFlags(passFlags[0]= '1')
+        }else{
+            setPassFlags(passFlags[0]= '1')
+        }
+        console.log(passFlags)
+    }
+
+
+    const setSpe = () =>{
+        if(passFlags >= 10 && passFlags!== 100 && passFlags !== 101){
+            setPassFlags(passFlags-10)
+        }else{
+            setPassFlags(passFlags+10)
+        }
+    }
+
+
+    const setCaps = () =>{
+        if(passFlags !== 0 && passFlags !== 10 && passFlags !== 100 && passFlags !==110){
+            setPassFlags(passFlags-1)
+        }else{
+            setPassFlags(passFlags+1)
         }
     }
 
@@ -98,11 +126,23 @@ const PassForm = ({show, handleClose, updatePassList}) =>{
                     <img src = {viewImgSrc} className = 'passItem' onClick={changeInputType}></img>
                 </div>
 
-                <p className='optionsHolder'> Options </p>
-
-                <div>
-                    <input type='checkbox' id='passTypeBox' onClick={changePassType}></input>
+                <div className='optionsHolder'>
+                    <p> Options </p>
+                    <input className = 'passOptions' type='checkbox' id='passTypeBox' onClick={changePassType}></input>
                     <label htmlFor='passTypeBox'> Passphrase</label>
+
+                    <input className = 'passOptions' type='number' id='length' max='20' min='3'></input>
+                    <label htmlFor='length'> Length </label>
+
+                    <br></br>
+                    <input className = 'passOptions' type='checkbox' id='numBox' onClick = {setNums}></input>
+                    <label htmlFor='numBox'> Numbers</label>
+
+                    <input className = 'passOptions' type='checkbox' id='speBox' onClick = {setSpe}></input>
+                    <label htmlFor='speBox'> Sepcial</label>
+
+                    <input className = 'passOptions' type='checkbox' id='capsBox' onClick = {setCaps}></input>
+                    <label htmlFor='capsBox'> Capitals</label>
                 </div>
                 
             </Modal.Body>

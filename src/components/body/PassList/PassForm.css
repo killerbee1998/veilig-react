@@ -6,6 +6,20 @@
     border-radius: 20%;
 }
 
+.optionsHolder{
+    margin:1rem;
+    text-align: left;
+}
+
+.passOptions{
+    margin-left: 3rem;
+    margin-right: 10px;
+}
+
+#length{
+    width: 5rem;
+}
+
 .passItem:hover{
     background-color: #0275d8;;
 }
