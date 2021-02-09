@@ -65,29 +65,29 @@ const PassForm = ({show, handleClose, updatePassList}) =>{
 
     const setNums = () =>{
         if(passFlags[0] === '0'){
-            setPassFlags(passFlags[0]= '1')
+            setPassFlags('1'+passFlags[1]+passFlags[2])
         }else{
-            setPassFlags(passFlags[0]= '1')
+            setPassFlags('0'+passFlags[1]+passFlags[2])
         }
-        console.log(passFlags)
     }
 
 
     const setSpe = () =>{
-        if(passFlags >= 10 && passFlags!== 100 && passFlags !== 101){
-            setPassFlags(passFlags-10)
+        if(passFlags[1] === '0'){
+            setPassFlags(passFlags[0]+'1'+passFlags[2])
         }else{
-            setPassFlags(passFlags+10)
+            setPassFlags(passFlags[0]+'0'+passFlags[2])
         }
     }
 
 
     const setCaps = () =>{
-        if(passFlags !== 0 && passFlags !== 10 && passFlags !== 100 && passFlags !==110){
-            setPassFlags(passFlags-1)
+        if(passFlags[2] === '0'){
+            setPassFlags(passFlags[0]+passFlags[1]+'1')
         }else{
-            setPassFlags(passFlags+1)
+            setPassFlags(passFlags[0]+passFlags[1]+'1')
         }
+
     }
 
     const handlePassChange = (event) =>{
